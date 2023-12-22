@@ -106,7 +106,7 @@ import tempra from '../assets/tempra.png'
   }
   table{
     margin: 0 auto;
-    font-size: 25px;
+    font-size: 22px;
     border-collapse: collapse;
     font-weight: bold;
     tr{
