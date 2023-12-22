@@ -8,11 +8,11 @@ import tempra from '../assets/tempra.png'
     <div class="title">お品書き</div>
     <table>
       <tr>
-        <td>焼きまんじゅう (1串: ４個)</td>
+        <td>焼きまんじゅう (1串４個)</td>
         <td>200円</td>
       </tr>
       <tr>
-        <td>餡入り焼きまんじゅう (1串: 2個)</td>
+        <td>餡入り焼きまんじゅう (1串2個)</td>
         <td>220円</td>
       </tr>
       <tr>
@@ -134,7 +134,7 @@ import tempra from '../assets/tempra.png'
   }
   #menu{
     table{
-      font-size: 20px;
+      font-size: 19px;
     }
   }
 }
