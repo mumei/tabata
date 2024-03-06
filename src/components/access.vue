@@ -30,7 +30,7 @@
           </tr>
           <tr>
             <td>定休日:</td>
-            <td>月曜日</td>
+            <td>水曜日</td>
           </tr>
         </table>
       </div>
