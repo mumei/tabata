@@ -26,7 +26,12 @@
 
     <div class="detail">
       <div class="item">
-        <div><img src="@/assets/kake.png?preset=img&src" srcset="@/assets/kake.png?preset=img&srcset" alt="かけうどん（温）" /></div>
+        <div>
+          <picture>
+            <source type="image/webp" srcset="@/assets/kake.png?preset=img&format=webp&srcset">
+            <img src="@/assets/kake.png?preset=img&src" srcset="@/assets/kake.png?preset=img&srcset" alt="かけうどん（温）" />
+          </picture>
+        </div>
         <div class="itemTitle">かけうどん（温）</div>
         <div class="description">
           極太で腰の強い上州うどん<br/>
@@ -36,7 +41,12 @@
         </div>
       </div>
       <div class="item">
-        <div><img src="@/assets/zaru.png?preset=img&src" srcset="@/assets/zaru.png?preset=img&srcset" alt="ざるうどん（冷）"/></div>
+        <div>
+          <picture>
+            <source type="image/webp" srcset="@/assets/zaru.png?preset=img&format=webp&srcset">
+            <img src="@/assets/zaru.png?preset=img&src" srcset="@/assets/zaru.png?preset=img&srcset" alt="ざるうどん（冷）"/>
+          </picture>
+        </div>
         <div class="itemTitle">ざるうどん（冷）</div>
         <div class="description">
           極太で腰の強い上州うどん<br/>
@@ -46,7 +56,12 @@
         </div>
       </div>
       <div class="item">
-        <div><img src="@/assets/tempra.png?preset=img&src" srcset="@/assets/tempra.png?preset=img&srcset" alt="かき揚げ天ぷら"/></div>
+        <div>
+          <picture>
+            <source type="image/webp" srcset="@/assets/tempra.png?preset=img&format=webp&srcset">
+            <img src="@/assets/tempra.png?preset=img&src" srcset="@/assets/tempra.png?preset=img&srcset" alt="かき揚げ天ぷら"/>
+          </picture>
+        </div>
         <div class="itemTitle">かき揚げ天ぷら</div>
         <div class="description">
           裏の畑で採りたての新鮮野菜を使用したかき揚げです。
@@ -134,3 +149,5 @@
   }
 }
 </style>
+<script setup lang="ts">
+</script>
