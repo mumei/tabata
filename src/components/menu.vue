@@ -5,7 +5,7 @@ import tempra from '../assets/tempra.png'
 </script>
 <template>
   <div id="menu">
-    <div class="title">お品書き</div>
+    <H1 class="title">お品書き</H1>
     <table>
       <tr>
         <td>焼きまんじゅう (1串４個)</td>
