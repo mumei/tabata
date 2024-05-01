@@ -1,22 +1,32 @@
 <script setup lang="ts">
-import gate from '../assets/gate.png'
-import inside from '../assets/inside.png'
-import farm from '../assets/farm.png'
-import img0 from '../assets/img_0.png'
-import img1 from '../assets/img_1.png'
-import img2 from '../assets/img_2.png'
-import img3 from '../assets/img_3.png'
+import img0Srcset from '@/assets/img_0.png?preset=img&srcset'
+import img1Srcset from '@/assets/img_1.png?preset=img&srcset'
+import img2Srcset from '@/assets/img_2.png?preset=img&srcset'
+import img3Srcset from '@/assets/img_3.png?preset=img&srcset'
+
+
+import img0Src from '@/assets/img_0.png?preset=img&src'
+import img1Src from '@/assets/img_1.png?preset=img&src'
+import img2Src from '@/assets/img_2.png?preset=img&src'
+import img3Src from '@/assets/img_3.png?preset=img&src'
 import 'vue3-carousel/dist/carousel.css'
+
+console.log('img0Srcset',img0Srcset);
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
-const images = [img0,img1,img2,img3]
+const images = [
+  {srcset: img0Srcset, src: img0Src},
+  {srcset: img1Srcset, src: img1Src},
+  {srcset: img2Srcset, src: img2Src},
+  {srcset: img3Srcset, src: img3Src}
+];
 </script>
 <template>
   <div id="shop">
     <H1 class="title">お店の紹介</H1>
     <div class="item">
       <div>
-        <img :src="gate" alt="入口の様子" />
+        <img src="@/assets/gate.png?preset=img&src" srcset="@/assets/gate.png?preset=img&srcset" alt="入口の様子" />
       </div>
       <div>
         <H3 class="commentTitle">入口の様子</H3>
@@ -28,12 +38,12 @@ const images = [img0,img1,img2,img3]
         <h3 class="commentTitle">店内の様子</h3>
       </div>
       <div>
-        <img :src="inside" alt="店内の様子" />
+        <img src="@/assets/inside.png?preset=img&src" srcset="@/assets/inside.png?preset=img&srcset" alt="店内の様子" />
       </div>
     </div>
     <div class="item">
       <div>
-        <img :src="farm" alt="お店の裏の畑" />
+        <img src="@/assets/farm.png?preset=img&src" srcset="@/assets/farm.png?preset=img&srcset" alt="お店の裏の畑" />
       </div>
       <div>
         <h3 class="commentTitle">お店の裏の畑</h3>
@@ -52,7 +62,7 @@ const images = [img0,img1,img2,img3]
         :transition="1000" >
       <slide v-for="(item,index) in images" :key="index">
         <div class="imgArea">
-          <img :src="item">
+          <img :src="item.src" :srcset="item.srcset" alt="">
         </div>
       </slide>
       <template #addons>

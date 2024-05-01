@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import kake from '../assets/kake.png'
-import zaru from '../assets/zaru.png'
-import tempra from '../assets/tempra.png'
-</script>
 <template>
   <div id="menu">
     <H1 class="title">お品書き</H1>
@@ -31,7 +26,7 @@ import tempra from '../assets/tempra.png'
 
     <div class="detail">
       <div class="item">
-        <div><img :src="kake"/></div>
+        <div><img src="@/assets/kake.png?preset=img&src" srcset="@/assets/kake.png?preset=img&srcset" alt="かけうどん（温）" /></div>
         <div class="itemTitle">かけうどん（温）</div>
         <div class="description">
           極太で腰の強い上州うどん<br/>
@@ -41,7 +36,7 @@ import tempra from '../assets/tempra.png'
         </div>
       </div>
       <div class="item">
-        <div><img :src="zaru"/></div>
+        <div><img src="@/assets/zaru.png?preset=img&src" srcset="@/assets/zaru.png?preset=img&srcset" alt="ざるうどん（冷）"/></div>
         <div class="itemTitle">ざるうどん（冷）</div>
         <div class="description">
           極太で腰の強い上州うどん<br/>
@@ -51,7 +46,7 @@ import tempra from '../assets/tempra.png'
         </div>
       </div>
       <div class="item">
-        <div><img :src="tempra"/></div>
+        <div><img src="@/assets/tempra.png?preset=img&src" srcset="@/assets/tempra.png?preset=img&srcset" alt="かき揚げ天ぷら"/></div>
         <div class="itemTitle">かき揚げ天ぷら</div>
         <div class="description">
           裏の畑で採りたての新鮮野菜を使用したかき揚げです。
