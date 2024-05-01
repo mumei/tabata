@@ -1,12 +1,7 @@
-<script setup lang="ts">
-import topImage from "../assets/topImage.png"
-
-</script>
-
 <template>
   <div>
     <div class="imageArea">
-      <img :src="topImage" alt="田畑の焼きまんじゅう">
+      <img src="@/assets/topImage.png?preset=img&src" srcset="@/assets/topImage.png?preset=img&srcset" alt="田畑の焼きまんじゅう">
     </div>
     <div class="title">
       <span>手作り田畑の</span>

@@ -1,9 +1,6 @@
-<script setup lang="ts">
-import banner from '../assets/banner.png'
-</script>
 <template>
   <div class="footer">
-    <img :src="banner"  alt=""/>
+    <img src="@/assets/banner.png?preset=img&src" srcset="@/assets/banner.png?preset=img&srcset" alt=""/>
   </div>
 </template>
 <style scoped lang="scss">
