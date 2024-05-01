@@ -16,7 +16,6 @@ import img2WebpSrcset from '@/assets/img_2.png?preset=img&format=webp&srcset'
 import img3WebpSrcset from '@/assets/img_3.png?preset=img&format=webp&srcset'
 import 'vue3-carousel/dist/carousel.css'
 
-console.log('img0Srcset',img0Srcset);
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 const images = [
