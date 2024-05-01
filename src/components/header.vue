@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="imageArea">
-      <img src="@/assets/topImage.png?preset=img&src" srcset="@/assets/topImage.png?preset=img&srcset" alt="田畑の焼きまんじゅう">
+      <picture>
+        <source type="image/webp" srcset="@/assets/topImage.png?preset=img&format=webp&srcset">
+        <img src="@/assets/topImage.png?preset=img&src" srcset="@/assets/topImage.png?preset=img&srcset" alt="田畑の焼きまんじゅう">
+      </picture>
     </div>
     <div class="title">
       <span>手作り田畑の</span>
@@ -61,3 +64,5 @@
   }
 }
 </style>
+<script setup lang="ts">
+</script>

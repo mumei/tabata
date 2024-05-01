@@ -4,7 +4,10 @@ const alt = '手作り田端の焼きまんじゅう。 江戸時代、群馬で
 </script>
 <template>
   <div id="about">
-    <img src="@/assets/about.png?preset=img&src" srcset="@/assets/about.png?preset=img&srcset"  :alt="alt"/>
+    <picture>
+      <source type="image/webp" srcset="@/assets/about.png?preset=img&format=webp&srcset">
+      <img src="@/assets/about.png?preset=img&src" srcset="@/assets/about.png?preset=img&srcset"  :alt="alt"/>
+    </picture>
   </div>
 </template>
 <style scoped lang="scss">

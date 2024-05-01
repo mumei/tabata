@@ -1,6 +1,9 @@
 <template>
   <div class="footer">
-    <img src="@/assets/banner.png?preset=img&src" srcset="@/assets/banner.png?preset=img&srcset" alt=""/>
+    <picture>
+      <source type="image/webp" srcset="@/assets/banner.png?preset=img&format=webp&srcset">
+      <img src="@/assets/banner.png?preset=img&src" srcset="@/assets/banner.png?preset=img&srcset" alt=""/>
+    </picture>
   </div>
 </template>
 <style scoped lang="scss">
@@ -16,3 +19,5 @@
   }
 }
 </style>
+<script setup lang="ts">
+</script>

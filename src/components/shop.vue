@@ -9,16 +9,21 @@ import img0Src from '@/assets/img_0.png?preset=img&src'
 import img1Src from '@/assets/img_1.png?preset=img&src'
 import img2Src from '@/assets/img_2.png?preset=img&src'
 import img3Src from '@/assets/img_3.png?preset=img&src'
+
+import img0WebpSrcset from '@/assets/img_0.png?preset=img&format=webp&srcset'
+import img1WebpSrcset from '@/assets/img_1.png?preset=img&format=webp&srcset'
+import img2WebpSrcset from '@/assets/img_2.png?preset=img&format=webp&srcset'
+import img3WebpSrcset from '@/assets/img_3.png?preset=img&format=webp&srcset'
 import 'vue3-carousel/dist/carousel.css'
 
 console.log('img0Srcset',img0Srcset);
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 const images = [
-  {srcset: img0Srcset, src: img0Src},
-  {srcset: img1Srcset, src: img1Src},
-  {srcset: img2Srcset, src: img2Src},
-  {srcset: img3Srcset, src: img3Src}
+  {srcset: img0Srcset, src: img0Src, webp: img0WebpSrcset },
+  {srcset: img1Srcset, src: img1Src, webp: img1WebpSrcset},
+  {srcset: img2Srcset, src: img2Src, webp: img2WebpSrcset},
+  {srcset: img3Srcset, src: img3Src, webp: img3WebpSrcset}
 ];
 </script>
 <template>
@@ -26,7 +31,10 @@ const images = [
     <H1 class="title">お店の紹介</H1>
     <div class="item">
       <div>
-        <img src="@/assets/gate.png?preset=img&src" srcset="@/assets/gate.png?preset=img&srcset" alt="入口の様子" />
+        <picture>
+          <source type="image/webp" srcset="@/assets/gate.png?preset=img&format=webp&srcset">
+          <img src="@/assets/gate.png?preset=img&src" srcset="@/assets/gate.png?preset=img&srcset" alt="入口の様子" />
+        </picture>
       </div>
       <div>
         <H3 class="commentTitle">入口の様子</H3>
@@ -38,12 +46,18 @@ const images = [
         <h3 class="commentTitle">店内の様子</h3>
       </div>
       <div>
-        <img src="@/assets/inside.png?preset=img&src" srcset="@/assets/inside.png?preset=img&srcset" alt="店内の様子" />
+        <picture>
+          <source type="image/webp" srcset="@/assets/inside.png?preset=img&format=webp&srcset">
+          <img src="@/assets/inside.png?preset=img&src" srcset="@/assets/inside.png?preset=img&srcset" alt="店内の様子" />
+        </picture>
       </div>
     </div>
     <div class="item">
       <div>
-        <img src="@/assets/farm.png?preset=img&src" srcset="@/assets/farm.png?preset=img&srcset" alt="お店の裏の畑" />
+        <picture>
+          <source type="image/webp" srcset="@/assets/farm.png?preset=img&format=webp&srcset">
+          <img src="@/assets/farm.png?preset=img&src" srcset="@/assets/farm.png?preset=img&srcset" alt="お店の裏の畑" />
+        </picture>
       </div>
       <div>
         <h3 class="commentTitle">お店の裏の畑</h3>
@@ -62,7 +76,10 @@ const images = [
         :transition="1000" >
       <slide v-for="(item,index) in images" :key="index">
         <div class="imgArea">
-          <img :src="item.src" :srcset="item.srcset" alt="">
+          <picture>
+            <source type="image/webp" :srcset="item.webp">
+            <img :src="item.src" :srcset="item.srcset" alt="">
+          </picture>
         </div>
       </slide>
       <template #addons>
