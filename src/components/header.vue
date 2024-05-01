@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import topImage from "../assets/topImage.png"
+
 </script>
 
 <template>
   <div>
     <div class="imageArea">
-      <img :src="topImage">
+      <img :src="topImage" alt="田畑の焼きまんじゅう">
     </div>
     <div class="title">
-      <div>手作り田畑の</div>
-      <div>焼きまんじゅう</div>
+      <span>手作り田畑の</span>
+      <span>焼きまんじゅう</span>
     </div>
   </div>
 </template>
@@ -26,10 +27,12 @@ import topImage from "../assets/topImage.png"
   -webkit-text-stroke: 1px white;
   text-stroke: 1px white;
 
-  div:nth-child(1){
+  span:nth-child(1){
+    display: block;
     font-size: 30px;
   }
-  div:nth-child(2){
+  span:nth-child(2){
+    display: block;
     font-size: 70px;
   }
 }
@@ -49,10 +52,10 @@ import topImage from "../assets/topImage.png"
 @media only screen and (max-width: 600px) {
   .title {
     top: 100px;
-    div:nth-child(1){
+    span:nth-child(1){
       font-size: 20px;
     }
-    div:nth-child(2){
+    span:nth-child(2){
       font-size: 40px;
     }
   }

@@ -13,36 +13,36 @@ const images = [img0,img1,img2,img3]
 </script>
 <template>
   <div id="shop">
-    <div class="title">お店の紹介</div>
+    <H1 class="title">お店の紹介</H1>
     <div class="item">
       <div>
-        <img :src="gate" />
+        <img :src="gate" alt="入口の様子" />
       </div>
       <div>
-        <div class="commentTitle">入口の様子</div>
+        <H3 class="commentTitle">入口の様子</H3>
         手作り手編みの暖簾と手作り看板
       </div>
     </div>
     <div class="item">
       <div>
-        <div class="commentTitle">店内の様子</div>
+        <h3 class="commentTitle">店内の様子</h3>
       </div>
       <div>
-        <img :src="inside" />
+        <img :src="inside" alt="店内の様子" />
       </div>
     </div>
     <div class="item">
       <div>
-        <img :src="farm" />
+        <img :src="farm" alt="お店の裏の畑" />
       </div>
       <div>
-        <div class="commentTitle">お店の裏の畑</div>
+        <h3 class="commentTitle">お店の裏の畑</h3>
         野菜は裏の畑で無農薬にて育てておりますので安心してお召し上がりください。
       </div>
     </div>
 
 
-    <div class="otherImages">その他の写真</div>
+    <H2 class="otherImages">その他の写真</H2>
     <div class="slide">
     <carousel
         pauseAutoplayOnHover
