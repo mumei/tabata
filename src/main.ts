@@ -7,6 +7,7 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import VueSmoothScroll from 'vue3-smooth-scroll'
+import router from "./router.ts";
 
 const vuetify = createVuetify({
   components,
@@ -20,4 +21,4 @@ const vuetify = createVuetify({
   }
 })
 
-createApp(App).use(VueSmoothScroll).use(vuetify).mount('#app')
+createApp(App).use(VueSmoothScroll).use(vuetify).use(router).mount('#app')
