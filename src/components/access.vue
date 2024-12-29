@@ -26,7 +26,7 @@
           </tr>
           <tr>
             <td>営業時間:</td>
-            <td>8:30 ~ 17:00</td>
+            <td>8:30 ~ 17:00<br>※火曜のみ15:00まで</td>
           </tr>
           <tr>
             <td>定休日:</td>
@@ -64,8 +64,13 @@
 
     table{
       font-size: 24px;
-      td:first-child{
-        width: 150px;
+      td{
+        padding-top: 25px;
+        vertical-align: top;
+
+        &:first-child{
+          width: 150px;
+        }
       }
     }
   }
