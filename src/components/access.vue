@@ -26,7 +26,10 @@
           </tr>
           <tr>
             <td>営業時間:</td>
-            <td>8:30 ~ 15:00</td>
+            <td>
+              8:30 ~ <span style="color: red;">15:00</span> <span style="text-decoration: line-through;">17:00</span><br>
+              <div style="font-size: 16px;color: red; font-weight: bold">※都合により、4月末まで15:00で閉店とさせていただきます。</div>
+            </td>
           </tr>
           <tr>
             <td>定休日:</td>
