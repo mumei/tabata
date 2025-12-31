@@ -6,6 +6,7 @@ import Footer from '@/components/footer.vue';
 import Shop from '@/components/shop.vue';
 import Access from '@/components/access.vue';
 import ActionMenu from '@/components/ActionMenu.vue'
+import Media from '@/components/media.vue';
 </script>
 <template>
   <div class="root">
@@ -13,6 +14,7 @@ import ActionMenu from '@/components/ActionMenu.vue'
     <aboutArea/>
     <Menu />
     <Shop />
+    <Media />
     <Access />
     <Footer />
     <action-menu />
