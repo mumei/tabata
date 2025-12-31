@@ -48,6 +48,7 @@ const mediaArticles = [
 </template>
 <style scoped lang="scss">
 #media {
+  margin-top: 40px;
   padding: 40px 20px;
   background-color: #faf8f5;
 

@@ -2,26 +2,28 @@
   <div id="menu">
     <H1 class="title">お品書き</H1>
     <table>
-      <tr>
-        <td>焼きまんじゅう (1串４個)</td>
-        <td>200円</td>
-      </tr>
-      <tr>
-        <td>餡入り焼きまんじゅう (1串2個)</td>
-        <td>220円</td>
-      </tr>
-      <tr>
-        <td>かけうどん（温）</td>
-        <td>390円</td>
-      </tr>
-      <tr>
-        <td>ざるうどん（冷）</td>
-        <td>390円</td>
-      </tr>
-      <tr>
-        <td>かき揚げ天ぷら</td>
-        <td>100円</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td>焼きまんじゅう (1串４個)</td>
+          <td>200円</td>
+        </tr>
+        <tr>
+          <td>餡入り焼きまんじゅう (1串2個)</td>
+          <td>220円</td>
+        </tr>
+        <tr>
+          <td>かけうどん（温）</td>
+          <td>390円</td>
+        </tr>
+        <tr>
+          <td>ざるうどん（冷）</td>
+          <td>390円</td>
+        </tr>
+        <tr>
+          <td>かき揚げ天ぷら</td>
+          <td>100円</td>
+        </tr>
+      </tbody>
     </table>
 
     <div class="detail">
