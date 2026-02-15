@@ -1,32 +1,135 @@
 <template>
   <div id="menu">
     <H1 class="title">お品書き</H1>
-    <table>
-      <tbody>
-        <tr>
-          <td>焼きまんじゅう (1串４個)</td>
-          <td>200円</td>
-        </tr>
-        <tr>
-          <td>餡入り焼きまんじゅう (1串2個)</td>
-          <td>220円</td>
-        </tr>
-        <tr>
-          <td>かけうどん（温）</td>
-          <td>390円</td>
-        </tr>
-        <tr>
-          <td>ざるうどん（冷）</td>
-          <td>390円</td>
-        </tr>
-        <tr>
-          <td>かき揚げ天ぷら</td>
-          <td>100円</td>
-        </tr>
-      </tbody>
-    </table>
+    <v-container>
+      <v-row>
+        <v-col cols="12" sm="6">
+          <table>
+            <tbody>
+            <tr>
+              <td colspan="2" style="text-align: left;">焼きまんじゅう</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td> (餡無) 1串4個</td>
+              <td>200円</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td> (餡入) 1串2個</td>
+              <td>220円</td>
+            </tr>
+            </tbody>
+          </table>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <table>
+            <tbody>
+              <tr>
+                <td colspan="2" style="text-align: left">うどん</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>(温)かけうどん</td>
+                <td>390円</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>(冷)ざるうどん</td>
+                <td>390円</td>
+              </tr>
+            </tbody>
+          </table>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <table>
+            <tbody>
+            <tr>
+              <td colspan="2" style="text-align: left">うどん増量</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>大盛り (1.5倍)</td>
+              <td>+100円</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>特盛り (2倍)</td>
+              <td>+150円</td>
+            </tr>
+            </tbody>
+          </table>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <table>
+            <tbody>
+            <tr>
+              <td colspan="2" style="text-align: left">うどんトッピング</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>玉子</td>
+              <td>100円</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>餅</td>
+              <td>100円</td>
+            </tr>
+            </tbody>
+          </table>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <table>
+            <tbody>
+            <tr>
+              <td colspan="2" style="text-align: left">天ぷら</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>かき揚げ</td>
+              <td>120円</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ちくわ天</td>
+              <td>80円</td>
+            </tr>
+            </tbody>
+          </table>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <table>
+            <tbody>
+            <tr>
+              <td colspan="2" style="text-align: left">その他</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>上泉伊勢守饅頭(酒饅頭)</td>
+              <td>120円</td>
+            </tr>
+            </tbody>
+          </table>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <div class="detail">
+      <div class="item">
+        <div>
+          <picture>
+            <source type="image/webp" srcset="@/assets/topImage.png?preset=img&format=webp&srcset">
+            <img src="@/assets/topImage.png?preset=img&src" srcset="@/assets/topImage.png?preset=img&srcset" alt="かけうどん（温）" />
+          </picture>
+        </div>
+        <div class="itemTitle">焼きまんじゅう(餡無)</div>
+        <div class="description">
+          群馬県名物の焼きまんじゅう<br/>
+          饅頭の製造のために酒母製造免許を取得して一から手作りしています。<br/>
+          <span style="font-size: 14px;">酒母製造免許: 前酒1 第94号</span>
+        </div>
+      </div>
       <div class="item">
         <div>
           <picture>
@@ -120,18 +223,24 @@
     margin: 0 auto;
     font-size: 25px;
     border-collapse: collapse;
-    font-weight: bold;
+    //font-weight: bold;
     tr{
       td:first-child{
         padding-top: 10px;
-        width: 400px;
+        width: 60px;
+        font-weight: bold;
+      }
+      td:nth-child(2){
+        padding-top: 10px;
+        width: 340px;
         border-bottom: solid 1px;
       }
       td:last-child{
         text-align: right;
-        width: 100px;
+        width: 120px;
         border-bottom: solid 1px;
         vertical-align: bottom;
+        font-weight: bold;
       }
     }
   }
