@@ -55,7 +55,7 @@
             <tr>
               <td></td>
               <td>特盛り (2倍)</td>
-              <td>+150円</td>
+              <td>+200円</td>
             </tr>
             </tbody>
           </table>
