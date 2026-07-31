@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="headerArea">
     <div class="imageArea">
       <picture>
         <source type="image/webp" srcset="@/assets/topImage.png?preset=img&format=webp&srcset" />
@@ -10,33 +10,39 @@
         />
       </picture>
     </div>
-    <div class="title">
+    <h1 class="title">
       <span>手作り田畑の</span>
       <span>焼きまんじゅう</span>
-    </div>
+    </h1>
   </div>
 </template>
 
 <script setup lang="ts"></script>
 <style scoped lang="scss">
+.headerArea {
+  position: relative;
+  background-color: var(--color-ink);
+}
+
 .title {
-  font-weight: bold;
-  color: white;
+  z-index: var(--z-raised);
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-paper);
   text-align: left;
   position: absolute;
   top: 100px;
-  margin-left: 20px;
-
-  -webkit-text-stroke: 1px white;
-  text-stroke: 1px white;
+  left: var(--space-lg);
+  line-height: 1.12;
+  text-shadow: 0 2px 12px var(--color-shadow);
 
   span:nth-child(1) {
     display: block;
-    font-size: 30px;
+    font-size: var(--text-xl);
   }
   span:nth-child(2) {
     display: block;
-    font-size: 70px;
+    font-size: var(--text-display);
   }
 }
 
@@ -44,9 +50,21 @@
   position: relative;
   left: 0;
   right: 0;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-color: var(--color-overlay);
+    pointer-events: none;
+  }
+
   img {
+    display: block;
     width: 100%;
-    filter: blur(4px) opacity(80%);
+    filter: blur(1px) saturate(0.92);
+    transform: scale(1.01);
     object-fit: cover;
     object-position: 50% 50%;
     height: 300px;
@@ -54,12 +72,13 @@
 }
 @media only screen and (max-width: 600px) {
   .title {
-    top: 100px;
+    top: 56px;
+    left: var(--space-md);
     span:nth-child(1) {
-      font-size: 20px;
+      font-size: var(--text-md);
     }
     span:nth-child(2) {
-      font-size: 40px;
+      font-size: var(--text-2xl);
     }
   }
   .imageArea {

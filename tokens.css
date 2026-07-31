@@ -1,0 +1,45 @@
+:root {
+  --color-page: oklch(95% 0.012 82);
+  --color-paper: oklch(98.5% 0.008 84);
+  --color-paper-2: oklch(96% 0.013 82);
+  --color-ink: oklch(22% 0.015 58);
+  --color-ink-2: oklch(38% 0.013 60);
+  --color-muted: oklch(46% 0.012 62);
+  --color-rule: oklch(82% 0.015 78);
+  --color-accent: oklch(47% 0.12 48);
+  --color-accent-ink: oklch(98.5% 0.008 84);
+  --color-focus: oklch(55% 0.2 48);
+  --color-overlay: oklch(18% 0.02 54 / 0.46);
+  --color-shadow: oklch(20% 0.015 58 / 0.1);
+
+  --font-display: udmincho, 'MS Mincho', 'Hiragino Mincho ProN', serif;
+  --font-body: 'Yu Gothic', 'Hiragino Sans', 'BIZ UDPGothic', sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-display: clamp(2.5rem, 6vw, 4.375rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --rule-hair: 1px;
+  --radius-card: 0.5rem;
+  --radius-pill: 999px;
+  --radius-input: 0.25rem;
+  --z-raised: 10;
+  --z-sticky: 200;
+}

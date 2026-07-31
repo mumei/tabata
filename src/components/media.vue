@@ -22,7 +22,7 @@ const mediaArticles = [
     title: '麺食い2025ランキング',
     source: '前橋新聞 mebuku',
     url: 'https://mebuku.city/gourmet/gourmet-54687/',
-    description: '蕎麦、うどんの"二刀流"特集で紹介',
+    description: '蕎麦、うどんの「二刀流」特集で紹介',
   },
 ]
 </script>
@@ -50,7 +50,8 @@ const mediaArticles = [
 #media {
   margin-top: 40px;
   padding: 40px 20px;
-  background-color: #faf8f5;
+  background-color: var(--color-paper-2);
+  color: var(--color-ink);
 
   .title {
     text-align: center;
@@ -62,7 +63,7 @@ const mediaArticles = [
   .subtitle {
     text-align: center;
     font-size: 16px;
-    color: #666;
+    color: var(--color-muted);
     margin-bottom: 30px;
   }
 
@@ -76,26 +77,19 @@ const mediaArticles = [
 
   .article {
     display: block;
-    background-color: white;
+    background-color: var(--color-paper);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: var(--rule-hair) solid var(--color-rule);
+    border-radius: var(--radius-card);
     text-decoration: none;
     color: inherit;
-    transition:
-      transform 0.2s,
-      box-shadow 0.2s;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+    transition: border-color var(--dur-short) var(--ease-out);
 
     .source {
       display: inline-block;
       font-size: 12px;
-      color: #888;
-      background-color: #f0f0f0;
+      color: var(--color-muted);
+      background-color: var(--color-paper-2);
       padding: 4px 8px;
       border-radius: 4px;
       margin-bottom: 10px;
@@ -105,15 +99,21 @@ const mediaArticles = [
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
-      color: #333;
+      color: var(--color-ink);
     }
 
     .description {
       font-size: 14px;
-      color: #666;
+      color: var(--color-muted);
       line-height: 1.5;
       margin: 0;
     }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #media .article:hover {
+    border-color: var(--color-accent);
   }
 }
 

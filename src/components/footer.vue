@@ -21,6 +21,7 @@
     max-width: 700px;
     object-fit: cover;
     object-position: 50% 37%;
+    mix-blend-mode: multiply;
   }
 }
 </style>

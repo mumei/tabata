@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-01",
+  "framework": "Vue 3 + Vite + Vuetify",
+  "font_stack": "Japanese Mincho in src/style.css",
+  "palette": "Mostly pure white with local neutral overrides",
+  "motion": "vue3-carousel autoplay and CSS hover transitions",
+  "spacing": "Component-local pixel values; no prior token scale",
+  "preserve": [
+    "section order",
+    "photo placement",
+    "menu and shop content",
+    "fixed icon navigation pattern"
+  ]
+}

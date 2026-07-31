@@ -18,10 +18,10 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 const images = [
-  { srcset: img0Srcset, src: img0Src, webp: img0WebpSrcset },
-  { srcset: img1Srcset, src: img1Src, webp: img1WebpSrcset },
-  { srcset: img2Srcset, src: img2Src, webp: img2WebpSrcset },
-  { srcset: img3Srcset, src: img3Src, webp: img3WebpSrcset },
+  { srcset: img0Srcset, src: img0Src, webp: img0WebpSrcset, alt: '店内と料理の写真 1' },
+  { srcset: img1Srcset, src: img1Src, webp: img1WebpSrcset, alt: '店内と料理の写真 2' },
+  { srcset: img2Srcset, src: img2Src, webp: img2WebpSrcset, alt: '店内と料理の写真 3' },
+  { srcset: img3Srcset, src: img3Src, webp: img3WebpSrcset, alt: '店内と料理の写真 4' },
 ]
 </script>
 <template>
@@ -43,7 +43,7 @@ const images = [
         手作り手編みの暖簾と手作り看板
       </div>
     </div>
-    <div class="item">
+    <div class="item interior">
       <div>
         <h3 class="commentTitle">店内の様子</h3>
       </div>
@@ -77,18 +77,12 @@ const images = [
 
     <H2 class="otherImages">その他の写真</H2>
     <div class="slide">
-      <carousel
-        pause-autoplay-on-hover
-        :items-to-show="1.3"
-        wrap-around
-        :autoplay="3000"
-        :transition="1000"
-      >
+      <carousel aria-label="店内と料理の写真" :items-to-show="1.3" wrap-around :transition="220">
         <slide v-for="(item, index) in images" :key="index">
           <div class="imgArea">
             <picture>
               <source type="image/webp" :srcset="item.webp" />
-              <img :src="item.src" :srcset="item.srcset" alt="" />
+              <img :src="item.src" :srcset="item.srcset" :alt="item.alt" loading="lazy" />
             </picture>
           </div>
         </slide>
@@ -127,7 +121,7 @@ const images = [
           bottom: 0;
           left: 0;
           right: 0;
-          box-shadow: inset 0 0 10px 10px white;
+          box-shadow: inset 0 0 10px 10px var(--color-paper);
         }
       }
       &:has(+ div) {
@@ -150,8 +144,10 @@ const images = [
   @media only screen and (max-width: 750px) {
     .item {
       flex-direction: column;
-      &:has(div + div > img) {
+
+      &.interior {
         flex-direction: column-reverse;
+
         div {
           text-align: left;
         }
@@ -165,7 +161,8 @@ const images = [
     margin-top: 20px;
   }
   .slide {
-    background-color: #f1f1f1;
+    background-color: var(--color-paper-2);
+    color: var(--color-ink);
     padding: 20px 0;
   }
   .imgArea {
@@ -186,9 +183,30 @@ const images = [
         bottom: 0;
         left: 0;
         right: 0;
-        box-shadow: inset 0 0 10px 10px #f1f1f1;
+        box-shadow: inset 0 0 10px 10px var(--color-paper-2);
       }
     }
   }
+}
+
+:deep(.carousel__prev),
+:deep(.carousel__next) {
+  width: 44px;
+  height: 44px;
+  color: var(--color-paper);
+  background-color: var(--color-ink);
+}
+
+:deep(.carousel__pagination-button) {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+:deep(.carousel__pagination-button::after) {
+  background-color: var(--color-rule);
+}
+
+:deep(.carousel__pagination-button--active::after) {
+  background-color: var(--color-accent);
 }
 </style>

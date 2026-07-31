@@ -1,13 +1,12 @@
+/* Hallmark · macrostructure: existing photographic showcase · tone: grounded · anchor hue: toasted brown
+ * pre-emit critique: P4 H4 E4 S4 R5 V3 · contrast: pass (40–41) · mobile: pass (34, 49, 50–57)
+ */
 :root {
-  font-family:
-    udmincho,
-    ms mincho,
-    ヒラギノ明朝 pro w3,
-    hiragino mincho pro,
-    serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
-  background-color: #242424;
+  color: var(--color-ink);
+  background-color: var(--color-page);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,23 +14,47 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  min-width: 320px;
+  overflow-x: clip;
+  color: var(--color-ink);
+  background-color: var(--color-page);
 }
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
+  background-color: var(--color-paper);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #ffffff;
-  }
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-style: normal;
+  overflow-wrap: anywhere;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    background-color: #ffffff;
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 150ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
   }
 }

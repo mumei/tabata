@@ -212,7 +212,7 @@
           bottom: 0;
           left: 0;
           right: 0;
-          box-shadow: inset 0 0 8px 8px white;
+          box-shadow: inset 0 0 8px 8px var(--color-paper);
         }
       }
     }

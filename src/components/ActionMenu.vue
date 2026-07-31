@@ -1,109 +1,85 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { mdiMenu, mdiInformationOutline, mdiSilverware, mdiStore, mdiMap } from '@mdi/js'
 
 const show = ref<boolean>(true)
-const showTooltip = ref(false)
+let autoCloseTimer: ReturnType<typeof setTimeout> | undefined
+
+const cancelAutoClose = () => {
+  if (autoCloseTimer !== undefined) {
+    clearTimeout(autoCloseTimer)
+    autoCloseTimer = undefined
+  }
+}
 
 const toggle = () => {
-  if (show.value) {
-    showTooltip.value = false
-  }
+  cancelAutoClose()
   show.value = !show.value
-  setTimeout(() => {
-    showTooltip.value = show.value
-  }, 500)
 }
 
 onMounted(() => {
-  setTimeout(() => {
-    showTooltip.value = show.value
-  }, 500)
+  autoCloseTimer = setTimeout(() => {
+    show.value = false
+    autoCloseTimer = undefined
+  }, 3000)
 })
+
+onBeforeUnmount(cancelAutoClose)
 </script>
 <template>
   <div class="content">
     <v-expand-transition>
       <div v-show="show" class="menu">
-        <v-tooltip
-          :model-value="showTooltip"
-          text="紹介"
-          location="start"
-          @update:model-value="() => {}"
-        >
-          <template #activator="{ props }">
-            <v-btn
-              v-smooth-scroll="{ duration: 1000 }"
-              href="#about"
-              v-bind="props"
-              :icon="mdiInformationOutline"
-              size="large"
-            />
-          </template>
-        </v-tooltip>
-        <v-tooltip
-          :model-value="showTooltip"
-          text="お品書き"
-          location="start"
-          @update:model-value="() => {}"
-        >
-          <template #activator="{ props }">
-            <v-btn
-              v-smooth-scroll="{ duration: 1000 }"
-              href="#menu"
-              v-bind="props"
-              :icon="mdiSilverware"
-              size="large"
-            />
-          </template>
-        </v-tooltip>
-        <v-tooltip
-          :model-value="showTooltip"
-          text="お店の紹介"
-          location="start"
-          @update:model-value="() => {}"
-        >
-          <template #activator="{ props }">
-            <v-btn
-              v-smooth-scroll="{ duration: 1000 }"
-              href="#shop"
-              v-bind="props"
-              :icon="mdiStore"
-              size="large"
-            />
-          </template>
-        </v-tooltip>
-        <v-tooltip
-          :model-value="showTooltip"
-          text="アクセス"
-          location="start"
-          @update:model-value="() => {}"
-        >
-          <template #activator="{ props }">
-            <v-btn
-              v-smooth-scroll="{ duration: 1000 }"
-              href="#access"
-              v-bind="props"
-              :icon="mdiMap"
-              size="large"
-            />
-          </template>
-        </v-tooltip>
+        <v-btn
+          v-smooth-scroll="{ duration: 1000 }"
+          href="#about"
+          :icon="mdiInformationOutline"
+          size="large"
+          aria-label="紹介へ移動"
+        />
+        <v-btn
+          v-smooth-scroll="{ duration: 1000 }"
+          href="#menu"
+          :icon="mdiSilverware"
+          size="large"
+          aria-label="お品書きへ移動"
+        />
+        <v-btn
+          v-smooth-scroll="{ duration: 1000 }"
+          href="#shop"
+          :icon="mdiStore"
+          size="large"
+          aria-label="お店の紹介へ移動"
+        />
+        <v-btn
+          v-smooth-scroll="{ duration: 1000 }"
+          href="#access"
+          :icon="mdiMap"
+          size="large"
+          aria-label="アクセスへ移動"
+        />
       </div>
     </v-expand-transition>
     <div class="menuExpander">
-      <v-btn :icon="mdiMenu" size="x-large" :onclick="toggle" />
+      <v-btn
+        :icon="mdiMenu"
+        size="x-large"
+        :aria-label="show ? 'ページ内メニューを閉じる' : 'ページ内メニューを開く'"
+        :aria-expanded="show"
+        @click="toggle"
+      />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .menuExpander {
-  margin-top: 20px;
+  margin-top: var(--space-lg);
 }
 .content {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  z-index: var(--z-sticky);
+  bottom: var(--space-lg);
+  right: var(--space-lg);
   display: flex;
   flex-direction: column;
 }
@@ -113,5 +89,23 @@ onMounted(() => {
   align-items: center;
   justify-content: space-between;
   height: 250px;
+}
+
+:deep(.v-btn) {
+  transition: transform var(--dur-micro) var(--ease-out);
+}
+
+:deep(.v-btn:active) {
+  transform: translateY(1px);
+}
+
+:deep(.v-btn:disabled) {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+:deep(.v-btn:focus-visible) {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
 }
 </style>
