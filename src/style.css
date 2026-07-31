@@ -1,5 +1,10 @@
 :root {
-  font-family: udmincho,ms mincho,ヒラギノ明朝 pro w3,hiragino mincho pro,serif;
+  font-family:
+    udmincho,
+    ms mincho,
+    ヒラギノ明朝 pro w3,
+    hiragino mincho pro,
+    serif;
   line-height: 1.5;
   font-weight: 400;
   background-color: #242424;

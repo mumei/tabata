@@ -1,16 +1,21 @@
 <template>
   <div class="footer">
     <picture>
-      <source type="image/webp" srcset="@/assets/banner.png?preset=img&format=webp&srcset">
-      <img src="@/assets/banner.png?preset=img&src" srcset="@/assets/banner.png?preset=img&srcset" alt=""/>
+      <source type="image/webp" srcset="@/assets/banner.png?preset=img&format=webp&srcset" />
+      <img
+        src="@/assets/banner.png?preset=img&src"
+        srcset="@/assets/banner.png?preset=img&srcset"
+        alt=""
+      />
     </picture>
   </div>
 </template>
+<script setup lang="ts"></script>
 <style scoped lang="scss">
-.footer{
+.footer {
   margin-top: 20px;
   text-align: center;
-  img{
+  img {
     width: 100%;
     height: 250px;
     max-width: 700px;
@@ -19,5 +24,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-</script>

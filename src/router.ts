@@ -1,22 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router';
-
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
     path: '/',
     name: 'Index',
-    component:()=> import('./pages/home.vue')
+    component: () => import('./pages/home.vue'),
   },
   {
     path: '/:catchAll(.*)',
     name: '404',
-    component:()=> import('./pages/404.vue')
-  }
-];
+    component: () => import('./pages/404.vue'),
+  },
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-});
+  routes,
+})
 
-export default router;
+export default router

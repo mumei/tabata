@@ -1,11 +1,10 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <template>
   <router-view />
 </template>
 
 <style scoped lang="scss">
-.root{
+.root {
   padding-bottom: 10px;
 }
 </style>

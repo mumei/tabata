@@ -4,7 +4,6 @@ import img1Srcset from '@/assets/img_1.png?preset=img&srcset'
 import img2Srcset from '@/assets/img_2.png?preset=img&srcset'
 import img3Srcset from '@/assets/img_3.png?preset=img&srcset'
 
-
 import img0Src from '@/assets/img_0.png?preset=img&src'
 import img1Src from '@/assets/img_1.png?preset=img&src'
 import img2Src from '@/assets/img_2.png?preset=img&src'
@@ -19,11 +18,11 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 const images = [
-  {srcset: img0Srcset, src: img0Src, webp: img0WebpSrcset },
-  {srcset: img1Srcset, src: img1Src, webp: img1WebpSrcset},
-  {srcset: img2Srcset, src: img2Src, webp: img2WebpSrcset},
-  {srcset: img3Srcset, src: img3Src, webp: img3WebpSrcset}
-];
+  { srcset: img0Srcset, src: img0Src, webp: img0WebpSrcset },
+  { srcset: img1Srcset, src: img1Src, webp: img1WebpSrcset },
+  { srcset: img2Srcset, src: img2Src, webp: img2WebpSrcset },
+  { srcset: img3Srcset, src: img3Src, webp: img3WebpSrcset },
+]
 </script>
 <template>
   <div id="shop">
@@ -31,8 +30,12 @@ const images = [
     <div class="item">
       <div>
         <picture>
-          <source type="image/webp" srcset="@/assets/gate.png?preset=img&format=webp&srcset">
-          <img src="@/assets/gate.png?preset=img&src" srcset="@/assets/gate.png?preset=img&srcset" alt="入口の様子" />
+          <source type="image/webp" srcset="@/assets/gate.png?preset=img&format=webp&srcset" />
+          <img
+            src="@/assets/gate.png?preset=img&src"
+            srcset="@/assets/gate.png?preset=img&srcset"
+            alt="入口の様子"
+          />
         </picture>
       </div>
       <div>
@@ -46,16 +49,24 @@ const images = [
       </div>
       <div>
         <picture>
-          <source type="image/webp" srcset="@/assets/inside.png?preset=img&format=webp&srcset">
-          <img src="@/assets/inside.png?preset=img&src" srcset="@/assets/inside.png?preset=img&srcset" alt="店内の様子" />
+          <source type="image/webp" srcset="@/assets/inside.png?preset=img&format=webp&srcset" />
+          <img
+            src="@/assets/inside.png?preset=img&src"
+            srcset="@/assets/inside.png?preset=img&srcset"
+            alt="店内の様子"
+          />
         </picture>
       </div>
     </div>
     <div class="item">
       <div>
         <picture>
-          <source type="image/webp" srcset="@/assets/farm.png?preset=img&format=webp&srcset">
-          <img src="@/assets/farm.png?preset=img&src" srcset="@/assets/farm.png?preset=img&srcset" alt="お店の裏の畑" />
+          <source type="image/webp" srcset="@/assets/farm.png?preset=img&format=webp&srcset" />
+          <img
+            src="@/assets/farm.png?preset=img&src"
+            srcset="@/assets/farm.png?preset=img&srcset"
+            alt="お店の裏の畑"
+          />
         </picture>
       </div>
       <div>
@@ -64,52 +75,52 @@ const images = [
       </div>
     </div>
 
-
     <H2 class="otherImages">その他の写真</H2>
     <div class="slide">
-    <carousel
-        pauseAutoplayOnHover
+      <carousel
+        pause-autoplay-on-hover
         :items-to-show="1.3"
-        wrapAround
+        wrap-around
         :autoplay="3000"
-        :transition="1000" >
-      <slide v-for="(item,index) in images" :key="index">
-        <div class="imgArea">
-          <picture>
-            <source type="image/webp" :srcset="item.webp">
-            <img :src="item.src" :srcset="item.srcset" alt="">
-          </picture>
-        </div>
-      </slide>
-      <template #addons>
-        <navigation />
-        <pagination />
-      </template>
-    </carousel>
+        :transition="1000"
+      >
+        <slide v-for="(item, index) in images" :key="index">
+          <div class="imgArea">
+            <picture>
+              <source type="image/webp" :srcset="item.webp" />
+              <img :src="item.src" :srcset="item.srcset" alt="" />
+            </picture>
+          </div>
+        </slide>
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </carousel>
     </div>
   </div>
 </template>
 <style scoped lang="scss">
-#shop{
+#shop {
   padding: 0 20px;
   padding-top: 40px;
-  .title{
+  .title {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
   }
 
-  .item{
+  .item {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
 
-    div{
+    div {
       padding: 5px;
-      &:has(img){
+      &:has(img) {
         padding: 0;
         position: relative;
-        &:after{
+        &:after {
           position: absolute;
           content: '';
           top: 0;
@@ -119,18 +130,17 @@ const images = [
           box-shadow: inset 0 0 10px 10px white;
         }
       }
-      &:has(+div){
+      &:has(+ div) {
         text-align: right;
       }
 
-      img{
+      img {
         position: relative;
         width: 100%;
-
       }
       flex: 1;
       font-size: 20px;
-      .commentTitle{
+      .commentTitle {
         font-size: 25px;
         font-weight: bold;
       }
@@ -138,47 +148,47 @@ const images = [
   }
 
   @media only screen and (max-width: 750px) {
-    .item{
+    .item {
       flex-direction: column;
-      &:has(div+div>img){
+      &:has(div + div > img) {
         flex-direction: column-reverse;
-        div{
+        div {
           text-align: left;
         }
       }
     }
   }
-  .otherImages{
+  .otherImages {
     font-size: 25px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
   }
-  .slide{
+  .slide {
     background-color: #f1f1f1;
     padding: 20px 0;
   }
-  .imgArea{
+  .imgArea {
     width: 90%;
     height: 400px;
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-    &:has(img){
-       padding: 0;
-       position: relative;
-       &:after{
-         position: absolute;
-         content: '';
-         top: 0;
-         bottom: 0;
-         left: 0;
-         right: 0;
-         box-shadow: inset 0 0 10px 10px #f1f1f1;
-       }
-     }
+    &:has(img) {
+      padding: 0;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-shadow: inset 0 0 10px 10px #f1f1f1;
+      }
+    }
   }
 }
 </style>
