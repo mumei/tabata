@@ -168,10 +168,22 @@ const trackMapRouteClick = () => {
 
       :deep(.v-btn) {
         flex: 1 1 220px;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
         min-height: 48px;
+        height: auto;
+        padding-block: var(--space-sm);
         color: var(--color-paper);
         background-color: var(--color-ink);
         text-transform: none;
+      }
+
+      :deep(.v-btn__content) {
+        min-width: 0;
+        white-space: normal;
+        line-height: 1.3;
+        text-align: center;
       }
     }
   }
