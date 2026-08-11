@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { mdiMenu, mdiInformationOutline, mdiSilverware, mdiStore, mdiMap } from '@mdi/js'
+import { trackEvent } from '@/analytics'
 
 const show = ref<boolean>(true)
 let autoCloseTimer: ReturnType<typeof setTimeout> | undefined
@@ -15,6 +16,10 @@ const cancelAutoClose = () => {
 const toggle = () => {
   cancelAutoClose()
   show.value = !show.value
+}
+
+const trackNavigation = (destinationSection: string) => {
+  trackEvent('navigation_click', { destination_section: destinationSection })
 }
 
 onMounted(() => {
@@ -36,6 +41,7 @@ onBeforeUnmount(cancelAutoClose)
           :icon="mdiInformationOutline"
           size="large"
           aria-label="紹介へ移動"
+          @click="trackNavigation('about')"
         />
         <v-btn
           v-smooth-scroll="{ duration: 1000 }"
@@ -43,6 +49,7 @@ onBeforeUnmount(cancelAutoClose)
           :icon="mdiSilverware"
           size="large"
           aria-label="お品書きへ移動"
+          @click="trackNavigation('menu')"
         />
         <v-btn
           v-smooth-scroll="{ duration: 1000 }"
@@ -50,6 +57,7 @@ onBeforeUnmount(cancelAutoClose)
           :icon="mdiStore"
           size="large"
           aria-label="お店の紹介へ移動"
+          @click="trackNavigation('shop')"
         />
         <v-btn
           v-smooth-scroll="{ duration: 1000 }"
@@ -57,6 +65,7 @@ onBeforeUnmount(cancelAutoClose)
           :icon="mdiMap"
           size="large"
           aria-label="アクセスへ移動"
+          @click="trackNavigation('access')"
         />
       </div>
     </v-expand-transition>

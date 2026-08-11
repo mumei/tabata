@@ -16,6 +16,7 @@ import img3WebpSrcset from '@/assets/img_3.png?preset=img&format=webp&srcset'
 import 'vue3-carousel/dist/carousel.css'
 
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { trackEvent } from '@/analytics'
 
 const images = [
   { srcset: img0Srcset, src: img0Src, webp: img0WebpSrcset, alt: '店内と料理の写真 1' },
@@ -23,6 +24,29 @@ const images = [
   { srcset: img2Srcset, src: img2Src, webp: img2WebpSrcset, alt: '店内と料理の写真 3' },
   { srcset: img3Srcset, src: img3Src, webp: img3WebpSrcset, alt: '店内と料理の写真 4' },
 ]
+
+const trackGalleryInteraction = (event: MouseEvent) => {
+  const target = event.target
+  if (!(target instanceof Element)) {
+    return
+  }
+
+  const control = target.closest('button')
+  if (!control) {
+    return
+  }
+
+  let galleryAction = 'other'
+  if (control.classList.contains('carousel__prev')) {
+    galleryAction = 'previous'
+  } else if (control.classList.contains('carousel__next')) {
+    galleryAction = 'next'
+  } else if (control.classList.contains('carousel__pagination-button')) {
+    galleryAction = 'pagination'
+  }
+
+  trackEvent('gallery_interaction', { gallery_action: galleryAction })
+}
 </script>
 <template>
   <div id="shop">
@@ -76,7 +100,7 @@ const images = [
     </div>
 
     <H2 class="otherImages">その他の写真</H2>
-    <div class="slide">
+    <div class="slide" @click="trackGalleryInteraction">
       <carousel aria-label="店内と料理の写真" :items-to-show="1.3" wrap-around :transition="220">
         <slide v-for="(item, index) in images" :key="index">
           <div class="imgArea">

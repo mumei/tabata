@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { trackEvent } from '@/analytics'
+
 const mediaArticles = [
   {
     title: '前橋500円グルメ探検隊▶３',
@@ -25,6 +27,13 @@ const mediaArticles = [
     description: '蕎麦、うどんの「二刀流」特集で紹介',
   },
 ]
+
+const trackMediaArticle = (title: string, source: string) => {
+  trackEvent('media_article_click', {
+    article_title: title,
+    article_source: source,
+  })
+}
 </script>
 <template>
   <div id="media">
@@ -38,6 +47,7 @@ const mediaArticles = [
         target="_blank"
         rel="noopener noreferrer"
         class="article"
+        @click="trackMediaArticle(article.title, article.source)"
       >
         <span class="source">{{ article.source }}</span>
         <h3 class="articleTitle">{{ article.title }}</h3>

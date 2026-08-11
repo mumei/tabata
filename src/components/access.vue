@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { mdiMapMarker, mdiPhone } from '@mdi/js'
+import { trackEvent } from '@/analytics'
+
+const trackPhoneClick = () => {
+  trackEvent('phone_click', { contact_method: 'telephone' })
+}
+
+const trackMapRouteClick = () => {
+  trackEvent('map_route_click', { map_destination: 'tabata_store' })
+}
+</script>
 
 <template>
   <div id="access">
@@ -28,7 +39,7 @@
           </div>
           <div>
             <dt>電話番号</dt>
-            <dd>070-8506-0272</dd>
+            <dd><a href="tel:07085060272" @click="trackPhoneClick">070-8506-0272</a></dd>
           </div>
           <div>
             <dt>営業時間</dt>
@@ -55,6 +66,26 @@
             <dd>現金のみ</dd>
           </div>
         </dl>
+        <div class="actions">
+          <v-btn
+            href="tel:07085060272"
+            :prepend-icon="mdiPhone"
+            size="large"
+            @click="trackPhoneClick"
+          >
+            電話する
+          </v-btn>
+          <v-btn
+            href="https://www.google.com/maps/dir/?api=1&destination=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%89%8D%E6%A9%8B%E5%B8%82%E4%B8%8A%E6%B3%89%E7%94%BA49-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            :prepend-icon="mdiMapMarker"
+            size="large"
+            @click="trackMapRouteClick"
+          >
+            Googleマップで経路を見る
+          </v-btn>
+        </div>
       </div>
     </div>
   </div>
@@ -121,6 +152,26 @@
         margin: 0;
         color: var(--color-ink);
         overflow-wrap: anywhere;
+      }
+
+      a {
+        color: var(--color-ink);
+        text-underline-offset: 3px;
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+
+      :deep(.v-btn) {
+        flex: 1 1 220px;
+        min-height: 48px;
+        color: var(--color-paper);
+        background-color: var(--color-ink);
+        text-transform: none;
       }
     }
   }
