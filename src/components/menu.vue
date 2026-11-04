@@ -1,6 +1,6 @@
 <template>
   <div id="menu">
-    <H1 class="title">お品書き</H1>
+    <h1 class="title">お品書き</h1>
     <v-container>
       <v-row>
         <v-col cols="12" sm="6">
@@ -21,6 +21,9 @@
               </tr>
             </tbody>
           </table>
+          <p class="order-note">
+            ご注文後に焼くため、お時間をいただきます。事前の電話注文がおすすめです。
+          </p>
         </v-col>
         <v-col cols="12" sm="6">
           <table>
@@ -40,6 +43,9 @@
               </tr>
             </tbody>
           </table>
+          <p class="order-note">
+            うどんはご注文を受けてから茹でます。ご提供までお時間をいただきます。
+          </p>
         </v-col>
         <v-col cols="12" sm="6">
           <table>
@@ -241,6 +247,11 @@
 
 #menu {
   padding: 0 20px;
+  .order-note {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
   .title {
     text-align: center;
     font-size: 40px;

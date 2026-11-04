@@ -83,7 +83,7 @@ const trackMapRouteClick = () => {
             size="large"
             @click="trackMapRouteClick"
           >
-            Googleマップで経路を見る
+            経路を見る
           </v-btn>
         </div>
       </div>

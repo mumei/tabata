@@ -15,7 +15,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build && node scripts/check-static-html.mjs",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -35,6 +35,7 @@
     "@eslint/js": "^10.0.1",
     "@mdi/js": "^7.4.47",
     "@types/node": "^26.6.6",
+    "@unhead/vue": "^2.1.17",
     "@vitejs/plugin-vue": "^6.0.10",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
@@ -46,6 +47,7 @@
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.5",
     "vite-imagetools": "^12.0.1",
+    "vite-ssg": "^28.3.0",
     "vue-eslint-parser": "^10.4.1",
     "vue-tsc": "^3.3.14"
   },

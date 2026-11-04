@@ -14,6 +14,13 @@ npm run dev
 Run `npm run check` for formatting, lint, type checking, and the production build.
 Run `npm audit` to check the full dependency tree for known vulnerabilities.
 
+`npm run build` uses `vite-ssg` to generate `dist/index.html` and `dist/404.html`
+with their page content already in the HTML. The build also verifies that the
+menu, prices, address, and opening hours are present without running JavaScript,
+and that the 404 page has `noindex`. GitHub Pages serves these generated files.
+Use `npm run preview` to check the generated pages locally; `npm run dev` keeps
+Vite's usual development server and hot reloading.
+
 TypeScript stays on the 6.x line because `vue-tsc` and `typescript-eslint`
 still require the JavaScript compiler API that TypeScript 7 no longer includes.
 Images use `vite-imagetools` to generate JPEG and WebP variants at build time.

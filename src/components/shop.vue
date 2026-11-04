@@ -50,7 +50,7 @@ const trackGalleryInteraction = (event: MouseEvent) => {
 </script>
 <template>
   <div id="shop">
-    <H1 class="title">お店の紹介</H1>
+    <h1 class="title">お店の紹介</h1>
     <div class="item">
       <div>
         <picture>
@@ -66,7 +66,7 @@ const trackGalleryInteraction = (event: MouseEvent) => {
         </picture>
       </div>
       <div>
-        <H3 class="commentTitle">入口の様子</H3>
+        <h3 class="commentTitle">入口の様子</h3>
         手作り手編みの暖簾と手作り看板
       </div>
     </div>
@@ -108,7 +108,7 @@ const trackGalleryInteraction = (event: MouseEvent) => {
       </div>
     </div>
 
-    <H2 class="otherImages">その他の写真</H2>
+    <h2 class="otherImages">その他の写真</h2>
     <div class="slide" @click="trackGalleryInteraction">
       <carousel aria-label="店内と料理の写真" :items-to-show="1.3" wrap-around :transition="220">
         <slide v-for="(item, index) in images" :key="index">
