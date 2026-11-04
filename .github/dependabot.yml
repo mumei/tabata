@@ -11,6 +11,11 @@ updates:
     commit-message:
       prefix: 'chore'
       include: 'scope'
+    # Remove this exclusion when typescript-eslint and vue-tsc support TypeScript 7.
+    # They currently require TypeScript <6.1 and <7, respectively.
+    ignore:
+      - dependency-name: 'typescript'
+        versions: ['>=7.0.0 <8.0.0']
     groups:
       npm-minor-and-patch:
         patterns: ['*']
