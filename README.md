@@ -1,5 +1,25 @@
 # Vue 3 + TypeScript + Vite
 
+## Development
+
+Use Node.js 26.13.0 (see `.node-version`) and npm 11.20.0 or newer.
+With Nodebrew, run `nodebrew use v26.13.0` before the commands below.
+CI reads the same Node.js version file.
+
+```sh
+npm ci
+npm run dev
+```
+
+Run `npm run check` for formatting, lint, type checking, and the production build.
+Run `npm audit` to check the full dependency tree for known vulnerabilities.
+
+TypeScript stays on the 6.x line because `vue-tsc` and `typescript-eslint`
+still require the JavaScript compiler API that TypeScript 7 no longer includes.
+Images use `vite-imagetools` to generate JPEG and WebP variants at build time.
+The `minimatch` override supplies the security fixes not yet included in the
+version ranges used by ESLint and typescript-eslint.
+
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Recommended IDE Setup

@@ -121,11 +121,11 @@
           <picture>
             <source
               type="image/webp"
-              srcset="@/assets/topImage.png?preset=img&format=webp&srcset"
+              srcset="@/assets/topImage.png?w=320;640;1280&format=webp&quality=100&as=srcset"
             />
             <img
-              src="@/assets/topImage.png?preset=img&src"
-              srcset="@/assets/topImage.png?preset=img&srcset"
+              src="@/assets/topImage.png?w=1280&format=jpeg&quality=100"
+              srcset="@/assets/topImage.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
               alt="焼きまんじゅう（餡無）"
             />
           </picture>
@@ -140,10 +140,13 @@
       <div class="item">
         <div>
           <picture>
-            <source type="image/webp" srcset="@/assets/kake.png?preset=img&format=webp&srcset" />
+            <source
+              type="image/webp"
+              srcset="@/assets/kake.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+            />
             <img
-              src="@/assets/kake.png?preset=img&src"
-              srcset="@/assets/kake.png?preset=img&srcset"
+              src="@/assets/kake.png?w=1280&format=jpeg&quality=100"
+              srcset="@/assets/kake.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
               alt="かけうどん（温）"
             />
           </picture>
@@ -159,10 +162,13 @@
       <div class="item">
         <div>
           <picture>
-            <source type="image/webp" srcset="@/assets/zaru.png?preset=img&format=webp&srcset" />
+            <source
+              type="image/webp"
+              srcset="@/assets/zaru.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+            />
             <img
-              src="@/assets/zaru.png?preset=img&src"
-              srcset="@/assets/zaru.png?preset=img&srcset"
+              src="@/assets/zaru.png?w=1280&format=jpeg&quality=100"
+              srcset="@/assets/zaru.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
               alt="ざるうどん（冷）"
             />
           </picture>
@@ -178,10 +184,13 @@
       <div class="item">
         <div>
           <picture>
-            <source type="image/webp" srcset="@/assets/tempra.png?preset=img&format=webp&srcset" />
+            <source
+              type="image/webp"
+              srcset="@/assets/tempra.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+            />
             <img
-              src="@/assets/tempra.png?preset=img&src"
-              srcset="@/assets/tempra.png?preset=img&srcset"
+              src="@/assets/tempra.png?w=1280&format=jpeg&quality=100"
+              srcset="@/assets/tempra.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
               alt="かき揚げ天ぷら"
             />
           </picture>

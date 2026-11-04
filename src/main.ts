@@ -10,6 +10,9 @@ import VueSmoothScroll from 'vue3-smooth-scroll'
 import router from './router.ts'
 
 const vuetify = createVuetify({
+  theme: {
+    defaultTheme: 'light',
+  },
   components: {
     VBtn,
     VCol,

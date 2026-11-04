@@ -2,10 +2,13 @@
   <div class="headerArea">
     <div class="imageArea">
       <picture>
-        <source type="image/webp" srcset="@/assets/topImage.png?preset=img&format=webp&srcset" />
+        <source
+          type="image/webp"
+          srcset="@/assets/topImage.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+        />
         <img
-          src="@/assets/topImage.png?preset=img&src"
-          srcset="@/assets/topImage.png?preset=img&srcset"
+          src="@/assets/topImage.png?w=1280&format=jpeg&quality=100"
+          srcset="@/assets/topImage.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
           alt="田畑の焼きまんじゅう"
         />
       </picture>

@@ -1,10 +1,13 @@
 <template>
   <div class="footer">
     <picture>
-      <source type="image/webp" srcset="@/assets/banner.png?preset=img&format=webp&srcset" />
+      <source
+        type="image/webp"
+        srcset="@/assets/banner.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+      />
       <img
-        src="@/assets/banner.png?preset=img&src"
-        srcset="@/assets/banner.png?preset=img&srcset"
+        src="@/assets/banner.png?w=1280&format=jpeg&quality=100"
+        srcset="@/assets/banner.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
         alt=""
       />
     </picture>

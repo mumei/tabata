@@ -2,13 +2,12 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from 'node:url'
 import { join, parse, resolve } from 'node:path'
-import imagePresets, { widthPreset } from 'vite-plugin-image-presets'
+import { imagetools } from 'vite-imagetools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
-      reactivityTransform: true,
       template: {
         transformAssetUrls: {
           tags: {
@@ -18,26 +17,7 @@ export default defineConfig({
         },
       },
     }),
-    imagePresets({
-      thumbnail: widthPreset({
-        class: 'img thumb',
-        loading: 'lazy',
-        widths: [48, 96],
-        formats: {
-          webp: { quality: 50 },
-          jpg: { quality: 70 },
-        },
-      }),
-      img: widthPreset({
-        class: 'img normal',
-        loading: 'lazy',
-        widths: [320, 640, 1280],
-        formats: {
-          webp: { quality: 100 },
-          jpg: { quality: 100 },
-        },
-      }),
-    }),
+    imagetools(),
   ],
   resolve: {
     alias: {
@@ -48,7 +28,7 @@ export default defineConfig({
   // assets keep the GitHub Pages 404 document working for nested URLs.
   base: '/',
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       input: entryPoints('index.html', '404.html'),
     },
   },
@@ -58,7 +38,7 @@ function entryPoints(...paths) {
   const entries = paths.map(parse).map((entry) => {
     const { dir, base, name } = entry
     const key = join(dir, name)
-    const path = resolve(__dirname, dir, base)
+    const path = resolve(import.meta.dirname, dir, base)
     return [key, path]
   })
 

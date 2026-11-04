@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import img0Srcset from '@/assets/img_0.png?preset=img&srcset'
-import img1Srcset from '@/assets/img_1.png?preset=img&srcset'
-import img2Srcset from '@/assets/img_2.png?preset=img&srcset'
-import img3Srcset from '@/assets/img_3.png?preset=img&srcset'
+import img0Srcset from '@/assets/img_0.png?w=320;640;1280&format=jpeg&quality=100&as=srcset'
+import img1Srcset from '@/assets/img_1.png?w=320;640;1280&format=jpeg&quality=100&as=srcset'
+import img2Srcset from '@/assets/img_2.png?w=320;640;1280&format=jpeg&quality=100&as=srcset'
+import img3Srcset from '@/assets/img_3.png?w=320;640;1280&format=jpeg&quality=100&as=srcset'
 
-import img0Src from '@/assets/img_0.png?preset=img&src'
-import img1Src from '@/assets/img_1.png?preset=img&src'
-import img2Src from '@/assets/img_2.png?preset=img&src'
-import img3Src from '@/assets/img_3.png?preset=img&src'
+import img0Src from '@/assets/img_0.png?w=1280&format=jpeg&quality=100'
+import img1Src from '@/assets/img_1.png?w=1280&format=jpeg&quality=100'
+import img2Src from '@/assets/img_2.png?w=1280&format=jpeg&quality=100'
+import img3Src from '@/assets/img_3.png?w=1280&format=jpeg&quality=100'
 
-import img0WebpSrcset from '@/assets/img_0.png?preset=img&format=webp&srcset'
-import img1WebpSrcset from '@/assets/img_1.png?preset=img&format=webp&srcset'
-import img2WebpSrcset from '@/assets/img_2.png?preset=img&format=webp&srcset'
-import img3WebpSrcset from '@/assets/img_3.png?preset=img&format=webp&srcset'
-import 'vue3-carousel/dist/carousel.css'
+import img0WebpSrcset from '@/assets/img_0.png?w=320;640;1280&format=webp&quality=100&as=srcset'
+import img1WebpSrcset from '@/assets/img_1.png?w=320;640;1280&format=webp&quality=100&as=srcset'
+import img2WebpSrcset from '@/assets/img_2.png?w=320;640;1280&format=webp&quality=100&as=srcset'
+import img3WebpSrcset from '@/assets/img_3.png?w=320;640;1280&format=webp&quality=100&as=srcset'
+import 'vue3-carousel/carousel.css'
 
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import { trackEvent } from '@/analytics'
@@ -54,10 +54,13 @@ const trackGalleryInteraction = (event: MouseEvent) => {
     <div class="item">
       <div>
         <picture>
-          <source type="image/webp" srcset="@/assets/gate.png?preset=img&format=webp&srcset" />
+          <source
+            type="image/webp"
+            srcset="@/assets/gate.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+          />
           <img
-            src="@/assets/gate.png?preset=img&src"
-            srcset="@/assets/gate.png?preset=img&srcset"
+            src="@/assets/gate.png?w=1280&format=jpeg&quality=100"
+            srcset="@/assets/gate.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
             alt="入口の様子"
           />
         </picture>
@@ -73,10 +76,13 @@ const trackGalleryInteraction = (event: MouseEvent) => {
       </div>
       <div>
         <picture>
-          <source type="image/webp" srcset="@/assets/inside.png?preset=img&format=webp&srcset" />
+          <source
+            type="image/webp"
+            srcset="@/assets/inside.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+          />
           <img
-            src="@/assets/inside.png?preset=img&src"
-            srcset="@/assets/inside.png?preset=img&srcset"
+            src="@/assets/inside.png?w=1280&format=jpeg&quality=100"
+            srcset="@/assets/inside.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
             alt="店内の様子"
           />
         </picture>
@@ -85,10 +91,13 @@ const trackGalleryInteraction = (event: MouseEvent) => {
     <div class="item">
       <div>
         <picture>
-          <source type="image/webp" srcset="@/assets/farm.png?preset=img&format=webp&srcset" />
+          <source
+            type="image/webp"
+            srcset="@/assets/farm.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+          />
           <img
-            src="@/assets/farm.png?preset=img&src"
-            srcset="@/assets/farm.png?preset=img&srcset"
+            src="@/assets/farm.png?w=1280&format=jpeg&quality=100"
+            srcset="@/assets/farm.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
             alt="お店の裏の畑"
           />
         </picture>
@@ -221,15 +230,28 @@ const trackGalleryInteraction = (event: MouseEvent) => {
   background-color: var(--color-ink);
 }
 
+:deep(.carousel__pagination) {
+  position: static;
+  margin-top: 10px;
+  transform: none;
+}
+
 :deep(.carousel__pagination-button) {
+  display: grid;
+  place-items: center;
   min-width: 44px;
   min-height: 44px;
+  background-color: transparent;
 }
 
 :deep(.carousel__pagination-button::after) {
+  content: '';
+  width: 16px;
+  height: 4px;
   background-color: var(--color-rule);
 }
 
+:deep(.carousel__pagination-button:hover::after),
 :deep(.carousel__pagination-button--active::after) {
   background-color: var(--color-accent);
 }

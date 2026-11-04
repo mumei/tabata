@@ -5,10 +5,13 @@ const alt =
 <template>
   <div id="about">
     <picture>
-      <source type="image/webp" srcset="@/assets/about-clean.png?preset=img&format=webp&srcset" />
+      <source
+        type="image/webp"
+        srcset="@/assets/about-clean.png?w=320;640;1280&format=webp&quality=100&as=srcset"
+      />
       <img
-        src="@/assets/about-clean.png?preset=img&src"
-        srcset="@/assets/about-clean.png?preset=img&srcset"
+        src="@/assets/about-clean.png?w=1280&format=jpeg&quality=100"
+        srcset="@/assets/about-clean.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
         :alt="alt"
       />
     </picture>

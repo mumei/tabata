@@ -1,6 +1,14 @@
 /* Hallmark · macrostructure: existing photographic showcase · tone: grounded · anchor hue: toasted brown
  * pre-emit critique: P4 H4 E4 S4 R5 V3 · contrast: pass (40–41) · mobile: pass (34, 49, 50–57)
  */
+/* Preserve the page spacing previously supplied by Vuetify 3's reset. */
+@layer vuetify-core.reset {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 :root {
   font-family: var(--font-body);
   line-height: 1.5;
