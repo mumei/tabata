@@ -1,10 +1,10 @@
 {
-  "date": "2026-08-01",
-  "framework": "Vue 3 + Vite + Vuetify",
-  "font_stack": "Japanese Mincho in src/style.css",
-  "palette": "Mostly pure white with local neutral overrides",
-  "motion": "vue3-carousel autoplay and CSS hover transitions",
-  "spacing": "Component-local pixel values; no prior token scale",
+  "date": "2026-11-09",
+  "framework": "Vue 3.5 + Vite 8 + Vuetify 4 + Vite SSG",
+  "font_stack": "Japanese Mincho display and Japanese Gothic body via tokens.css",
+  "palette": "Warm OKLCH paper, ink, toasted-brown accent, and focus tokens in tokens.css",
+  "motion": "Motion-cut component work; shared easing and duration tokens are available",
+  "spacing": "Shared 4-point-derived spacing scale in tokens.css",
   "preserve": [
     "section order",
     "photo placement",
