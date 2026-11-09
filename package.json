@@ -35,7 +35,7 @@
     "@eslint/js": "^10.0.1",
     "@mdi/js": "^7.4.47",
     "@types/node": "^26.6.6",
-    "@unhead/vue": "^2.1.17",
+    "@unhead/vue": "^3.4.3",
     "@vitejs/plugin-vue": "^6.0.10",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
