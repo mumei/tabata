@@ -25,30 +25,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.44",
-    "vue-router": "^5.4.0",
+    "vue": "^3.5.45",
+    "vue-router": "^5.5.0",
     "vue3-carousel": "^0.19.0",
     "vue3-smooth-scroll": "^0.8.1",
-    "vuetify": "^4.3.2"
+    "vuetify": "^4.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@mdi/js": "^7.4.47",
     "@types/node": "^26.6.6",
     "@unhead/vue": "^2.1.17",
-    "@vitejs/plugin-vue": "^6.0.10",
+    "@vitejs/plugin-vue": "^6.0.11",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-vue": "^10.12.0",
+    "eslint-plugin-vue": "^10.12.1",
     "globals": "^17.14.0",
-    "prettier": "^3.9.10",
-    "sass": "^1.107.1",
+    "prettier": "^3.10.1",
+    "sass": "^1.108.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.72.1",
-    "vite": "^8.3.5",
-    "vite-imagetools": "^12.0.1",
+    "typescript-eslint": "^8.72.2",
+    "vite": "^8.3.8",
+    "vite-imagetools": "^12.0.2",
     "vite-ssg": "^28.3.0",
-    "vue-eslint-parser": "^10.4.1",
+    "vue-eslint-parser": "^10.4.2",
     "vue-tsc": "^3.3.14"
   },
   "engines": {
