@@ -2,15 +2,20 @@
   <section id="about" class="about" aria-labelledby="about-title">
     <div class="about__panel">
       <div class="about__shop">
-        <img
-          class="about__character"
-          src="@/assets/about-character.png?w=440&format=webp&quality=90"
-          width="220"
-          height="280"
-          alt=""
-          loading="lazy"
-          aria-hidden="true"
-        />
+        <picture>
+          <source
+            media="(prefers-reduced-motion: reduce)"
+            srcset="@/assets/about-character.png?w=440&format=webp&quality=90"
+          />
+          <img
+            class="about__character"
+            src="@/assets/about-character.gif"
+            width="352"
+            height="448"
+            alt=""
+            loading="lazy"
+          />
+        </picture>
       </div>
 
       <div class="about__story">
@@ -81,6 +86,7 @@
   height: auto;
   margin-inline-start: auto;
   margin-inline-end: 0;
+  mix-blend-mode: multiply;
   object-fit: contain;
 }
 

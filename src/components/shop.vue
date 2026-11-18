@@ -61,6 +61,8 @@ const trackGalleryInteraction = (event: MouseEvent) => {
           <img
             src="@/assets/gate.png?w=1280&format=jpeg&quality=100"
             srcset="@/assets/gate.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+            width="720"
+            height="539"
             alt="入口の様子"
           />
         </picture>
@@ -83,6 +85,8 @@ const trackGalleryInteraction = (event: MouseEvent) => {
           <img
             src="@/assets/inside.png?w=1280&format=jpeg&quality=100"
             srcset="@/assets/inside.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+            width="720"
+            height="540"
             alt="店内の様子"
           />
         </picture>
@@ -98,6 +102,8 @@ const trackGalleryInteraction = (event: MouseEvent) => {
           <img
             src="@/assets/farm.png?w=1280&format=jpeg&quality=100"
             srcset="@/assets/farm.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+            width="720"
+            height="540"
             alt="お店の裏の畑"
           />
         </picture>
@@ -164,6 +170,7 @@ const trackGalleryInteraction = (event: MouseEvent) => {
       img {
         position: relative;
         width: 100%;
+        height: auto;
       }
       flex: 1;
       font-size: 20px;

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import headerArea from '@/components/header.vue'
 import aboutArea from '@/components/about.vue'
 import Menu from '@/components/menu.vue'
@@ -11,9 +12,14 @@ import Media from '@/components/media.vue'
 import { trackEvent } from '@/analytics'
 
 const sections = ['about', 'menu', 'shop', 'media', 'access'] as const
+const route = useRoute()
 let sectionObserver: IntersectionObserver | undefined
 
 onMounted(() => {
+  if (route.hash) {
+    document.getElementById(route.hash.slice(1))?.scrollIntoView({ behavior: 'instant' })
+  }
+
   const viewedSections = new Set<string>()
 
   sectionObserver = new IntersectionObserver(

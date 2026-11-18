@@ -132,6 +132,8 @@
             <img
               src="@/assets/topImage.png?w=1280&format=jpeg&quality=100"
               srcset="@/assets/topImage.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+              width="720"
+              height="540"
               alt="焼きまんじゅう（餡無）"
             />
           </picture>
@@ -153,6 +155,8 @@
             <img
               src="@/assets/kake.png?w=1280&format=jpeg&quality=100"
               srcset="@/assets/kake.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+              width="706"
+              height="530"
               alt="かけうどん（温）"
             />
           </picture>
@@ -175,6 +179,8 @@
             <img
               src="@/assets/zaru.png?w=1280&format=jpeg&quality=100"
               srcset="@/assets/zaru.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+              width="706"
+              height="530"
               alt="ざるうどん（冷）"
             />
           </picture>
@@ -197,6 +203,8 @@
             <img
               src="@/assets/tempra.png?w=1280&format=jpeg&quality=100"
               srcset="@/assets/tempra.png?w=320;640;1280&format=jpeg&quality=100&as=srcset"
+              width="706"
+              height="530"
               alt="かき揚げ天ぷら"
             />
           </picture>
@@ -234,6 +242,7 @@
 
     img {
       width: 100%;
+      height: auto;
     }
     .itemTitle {
       font-weight: bold;
