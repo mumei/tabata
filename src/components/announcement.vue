@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
     <div class="announcement__panel">
       <h2 id="announcement-title">臨時休業のお知らせ</h2>
       <dl class="announcement__dates">
-        <div>
+        <div class="announcement__closure">
           <dt><time datetime="2026-12-01">12月1日（火）</time></dt>
           <dd><strong>臨時休業</strong></dd>
         </div>
@@ -72,13 +72,20 @@ onBeforeUnmount(() => {
 
 .announcement__dates {
   display: grid;
-  gap: var(--space-xs);
+  gap: 0.125rem;
 }
 
 .announcement__dates > div {
   display: grid;
   grid-template-columns: 8em minmax(0, 1fr);
   gap: var(--space-xs);
+  padding: 0.25rem var(--space-xs);
+}
+
+.announcement__closure {
+  color: #8a251e;
+  background-color: #f8e2dc;
+  border-radius: var(--radius-input);
 }
 
 .announcement dt {
