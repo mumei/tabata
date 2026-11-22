@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import headerArea from '@/components/header.vue'
+import Announcement from '@/components/announcement.vue'
 import aboutArea from '@/components/about.vue'
 import Menu from '@/components/menu.vue'
 import Footer from '@/components/footer.vue'
@@ -17,7 +18,9 @@ let sectionObserver: IntersectionObserver | undefined
 
 onMounted(() => {
   if (route.hash) {
-    document.getElementById(route.hash.slice(1))?.scrollIntoView({ behavior: 'instant' })
+    void nextTick(() => {
+      document.getElementById(route.hash.slice(1))?.scrollIntoView({ behavior: 'instant' })
+    })
   }
 
   const viewedSections = new Set<string>()
@@ -57,6 +60,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="root">
     <headerArea />
+    <Announcement />
     <aboutArea />
     <Menu />
     <Shop />
